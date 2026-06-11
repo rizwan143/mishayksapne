@@ -10,7 +10,6 @@ const PRESET_AMOUNTS = [1000, 5000, 10000, 25000];
 const PAYMENT_METHODS = [
   { id: "easypaisa", name: "Easypaisa", icon: "📱", detail: "03070217380" },
   { id: "jazzcash", name: "JazzCash", icon: "💳", detail: "03070217380" },
-  { id: "bank", name: "Bank Transfer", icon: "🏦", detail: "HBL — IBAN: PK36HABB0000012345678901" },
 ];
 
 export default function ContributeSection() {
@@ -51,7 +50,7 @@ export default function ContributeSection() {
   };
 
   return (
-    <section id="contribute" className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-navy-950 via-[#0a1628] to-navy-950">
+    <section id="contribute" className="py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-navy-950 via-[#0a1628] to-navy-950">
       <div className="max-w-2xl mx-auto" ref={ref}>
 
         {/* Header */}
@@ -198,34 +197,33 @@ export default function ContributeSection() {
                   />
                 </div>
 
-                {/* Payment Method — only 3, no Stripe/PayPal */}
+                {/* Payment Method — Easypaisa & JazzCash centered */}
                 <div>
                   <label className="text-white/70 text-sm font-medium mb-3 block">Payment Method</label>
-                  <div className="grid grid-cols-3 gap-3">
+                  <div className="flex justify-center gap-4">
                     {PAYMENT_METHODS.map((pm) => (
                       <button
                         key={pm.id}
                         type="button"
                         onClick={() => setPaymentMethod(pm.id)}
-                        className={`p-3 rounded-xl text-left transition-all duration-200 ${
+                        className={`w-44 p-4 rounded-xl text-center transition-all duration-200 ${
                           paymentMethod === pm.id
                             ? "border-2 border-gold-500/70 bg-gold-500/10"
                             : "glass-card border border-white/10 hover:border-gold-500/30"
                         }`}
                       >
-                        <div className="text-xl mb-1">{pm.icon}</div>
-                        <div className="text-white text-xs font-semibold">{pm.name}</div>
-                        <div className="text-white/40 text-xs mt-0.5 truncate">{pm.detail}</div>
+                        <div className="text-2xl mb-1.5">{pm.icon}</div>
+                        <div className="text-white text-sm font-semibold">{pm.name}</div>
+                        <div className="text-white/40 text-xs mt-0.5">{pm.detail}</div>
                       </button>
                     ))}
                   </div>
 
-                  {/* Selected method instructions */}
-                  <div className="mt-3 glass-card rounded-xl px-4 py-3 border border-gold-500/15">
+                  {/* Instructions */}
+                  <div className="mt-3 glass-card rounded-xl px-4 py-3 border border-gold-500/15 text-center">
                     <p className="text-white/50 text-xs">
                       {paymentMethod === "easypaisa" && "📱 Send to Easypaisa: 03070217380 — then confirm via WhatsApp"}
                       {paymentMethod === "jazzcash" && "💳 Send to JazzCash: 03070217380 — then confirm via WhatsApp"}
-                      {paymentMethod === "bank" && "🏦 Bank: HBL · IBAN: PK36HABB0000012345678901 — then confirm via WhatsApp"}
                     </p>
                   </div>
                 </div>
