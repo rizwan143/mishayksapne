@@ -5,14 +5,14 @@ import { ChevronDown, Play } from "lucide-react";
 export default function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background — Azerbaijan landscape */}
+      {/* Background — beautiful night city skyline */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://images.unsplash.com/photo-1562157873-818bc0726f68?w=1920&q=90"
-          alt="Azerbaijan Baku"
+          src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=1920&q=90"
+          alt="Baku City Skyline"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-navy-950/75 via-navy-950/55 to-navy-950" />
+        <div className="absolute inset-0 bg-gradient-to-b from-navy-950/70 via-navy-950/50 to-navy-950" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,rgba(6,14,26,0.85)_100%)]" />
       </div>
 
@@ -83,7 +83,7 @@ export default function HeroSection() {
           ))}
         </motion.div>
 
-        {/* CTAs — wider buttons */}
+        {/* CTAs — wide buttons */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -92,13 +92,13 @@ export default function HeroSection() {
         >
           <a
             href="#contribute"
-            className="btn-gold text-navy-950 font-bold text-base px-14 py-4 rounded-full inline-block w-full sm:w-auto text-center min-w-[220px]"
+            className="btn-gold text-navy-950 font-bold text-base px-14 py-4 rounded-full inline-block w-full sm:w-auto text-center min-w-[240px]"
           >
             ✨ Contribute Now
           </a>
           <a
             href="#destinations"
-            className="glass-card text-white font-semibold text-base px-14 py-4 rounded-full inline-flex items-center justify-center gap-2 hover:border-gold-500/40 transition-colors border border-white/15 w-full sm:w-auto min-w-[220px]"
+            className="glass-card text-white font-semibold text-base px-14 py-4 rounded-full inline-flex items-center justify-center gap-2 hover:border-gold-500/40 transition-colors border border-white/15 w-full sm:w-auto min-w-[240px]"
           >
             <Play size={16} className="text-gold-400" />
             Explore Baku
