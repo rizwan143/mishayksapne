@@ -12,8 +12,9 @@ export default function HeroSection() {
           alt="Baku City Skyline"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-navy-950/85 via-navy-950/70 to-navy-950" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_30%,rgba(6,14,26,0.92)_100%)]" />
+        <div className="absolute inset-0 bg-navy-950/60" />
+        <div className="absolute inset-0 bg-gradient-to-b from-navy-950/80 via-navy-950/65 to-navy-950" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(6,14,26,0.3)_0%,rgba(6,14,26,0.90)_100%)]" />
       </div>
 
       {/* Floating particles */}
