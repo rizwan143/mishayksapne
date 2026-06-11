@@ -40,11 +40,26 @@ export default function HeroSection() {
           <span className="text-gold-400 text-sm font-medium tracking-widest uppercase">Group Fundraiser · Baku, Azerbaijan</span>
         </motion.div>
 
+        {/* Brand tagline */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.35 }}
+          className="mb-4"
+        >
+          <span className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold gold-text">
+            Mishay Dream ✨
+          </span>
+          <span className="block text-white/60 text-base sm:text-lg font-medium tracking-wide mt-1">
+            Turning Dreams Into Destinations.
+          </span>
+        </motion.div>
+
         {/* Headline */}
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
           className="font-display text-4xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight"
         >
           Join Us on an{" "}
