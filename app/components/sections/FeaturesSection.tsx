@@ -20,7 +20,7 @@ export default function FeaturesSection() {
           ref={ref}
         >
           <img
-            src="https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=1400&q=85"
+            src="https://images.unsplash.com/photo-1562157873-818bc0726f68?w=1400&q=85"
             alt="Azerbaijan landscape"
             className="w-full h-full object-cover"
           />

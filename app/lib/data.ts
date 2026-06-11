@@ -12,7 +12,7 @@ export const DESTINATIONS = [
     id: 1,
     title: "Flame Towers",
     description: "Three iconic skyscrapers resembling flames that illuminate Baku's skyline at night with a dazzling LED display.",
-    image: "https://images.unsplash.com/photo-1586957013058-df1c68c96b1b?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1609171016369-38e33aab5e39?w=800&q=80",
     tag: "Iconic Landmark",
   },
   {
@@ -26,7 +26,7 @@ export const DESTINATIONS = [
     id: 3,
     title: "Old City (Icherisheher)",
     description: "A UNESCO World Heritage Site, this ancient walled city carries centuries of history within its cobblestone streets.",
-    image: "https://images.unsplash.com/photo-1555993539-1732b0258235?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1601630167193-8aa56c0eeedd?w=800&q=80",
     tag: "UNESCO Heritage",
   },
   {
@@ -40,7 +40,7 @@ export const DESTINATIONS = [
     id: 5,
     title: "Gobustan National Park",
     description: "An otherworldly landscape of ancient rock carvings, mud volcanoes, and prehistoric art over 40,000 years old.",
-    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=800&q=80",
     tag: "Nature",
   },
   {
@@ -137,14 +137,14 @@ export const TESTIMONIALS = [
 ];
 
 export const GALLERY_IMAGES = [
-  { src: "https://images.unsplash.com/photo-1586957013058-df1c68c96b1b?w=600&q=80", alt: "Flame Towers Baku", tall: true },
-  { src: "https://images.unsplash.com/photo-1555993539-1732b0258235?w=600&q=80", alt: "Old City Baku", tall: false },
-  { src: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80", alt: "Modern Architecture", tall: false },
-  { src: "https://images.unsplash.com/photo-1533929736458-ca588d08c8be?w=600&q=80", alt: "Boulevard Evening", tall: true },
-  { src: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80", alt: "Caspian Sunset", tall: false },
-  { src: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&q=80", alt: "Mountain Landscape", tall: false },
-  { src: "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=600&q=80", alt: "Baku Old City Walls", tall: true },
-  { src: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=600&q=80", alt: "Travel Together", tall: false },
+  { src: "https://images.unsplash.com/photo-1609171016369-38e33aab5e39?w=600&q=80", alt: "Flame Towers Baku Night", tall: true },
+  { src: "https://images.unsplash.com/photo-1601630167193-8aa56c0eeedd?w=600&q=80", alt: "Old City Baku Streets", tall: false },
+  { src: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80", alt: "Heydar Aliyev Center", tall: false },
+  { src: "https://images.unsplash.com/photo-1567473030492-533b30c5494c?w=600&q=80", alt: "Baku Night Skyline", tall: true },
+  { src: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80", alt: "Caspian Sea Sunset", tall: false },
+  { src: "https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=600&q=80", alt: "Gobustan Rock Art", tall: false },
+  { src: "https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=600&q=80", alt: "Azerbaijan Landscape", tall: true },
+  { src: "https://images.unsplash.com/photo-1533929736458-ca588d08c8be?w=600&q=80", alt: "Baku Boulevard", tall: false },
 ];
 
 export const FAQS = [
