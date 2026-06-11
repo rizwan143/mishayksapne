@@ -50,7 +50,7 @@ export default function ProgressSection() {
   ];
 
   return (
-    <section id="progress" className="py-24 px-4 sm:px-6 lg:px-8">
+    <section id="progress" className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto" ref={sectionRef}>
         {/* Header */}
         <div className="text-center mb-16">

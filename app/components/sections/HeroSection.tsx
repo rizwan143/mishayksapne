@@ -5,17 +5,15 @@ import { ChevronDown, Play } from "lucide-react";
 export default function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
+      {/* Background — Azerbaijan landscape */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://images.unsplash.com/photo-1601601392250-8e4d60b5a1be?w=1920&q=90"
-          alt="Baku Skyline"
+          src="https://images.unsplash.com/photo-1562157873-818bc0726f68?w=1920&q=90"
+          alt="Azerbaijan Baku"
           className="w-full h-full object-cover"
         />
-        {/* Dark overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-navy-950/70 via-navy-950/50 to-navy-950" />
-        {/* Gold vignette */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,rgba(6,14,26,0.8)_100%)]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-navy-950/75 via-navy-950/55 to-navy-950" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,rgba(6,14,26,0.85)_100%)]" />
       </div>
 
       {/* Floating particles */}
@@ -23,20 +21,9 @@ export default function HeroSection() {
         <motion.div
           key={i}
           className="absolute w-1 h-1 bg-gold-400/60 rounded-full"
-          style={{
-            left: `${15 + i * 15}%`,
-            top: `${20 + (i % 3) * 20}%`,
-          }}
-          animate={{
-            y: [-20, 20, -20],
-            opacity: [0.3, 0.8, 0.3],
-          }}
-          transition={{
-            duration: 3 + i,
-            repeat: Infinity,
-            delay: i * 0.5,
-            ease: "easeInOut",
-          }}
+          style={{ left: `${15 + i * 15}%`, top: `${20 + (i % 3) * 20}%` }}
+          animate={{ y: [-20, 20, -20], opacity: [0.3, 0.8, 0.3] }}
+          transition={{ duration: 3 + i, repeat: Infinity, delay: i * 0.5, ease: "easeInOut" }}
         />
       ))}
 
@@ -47,7 +34,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="inline-flex items-center gap-2 glass-card px-4 py-2 rounded-full mb-8 border border-gold-500/30"
+          className="inline-flex items-center gap-2 glass-card px-5 py-2 rounded-full mb-8 border border-gold-500/30"
         >
           <span className="w-2 h-2 bg-gold-400 rounded-full animate-pulse" />
           <span className="text-gold-400 text-sm font-medium tracking-widest uppercase">Group Fundraiser · Baku, Azerbaijan</span>
@@ -82,36 +69,36 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.7 }}
-          className="flex items-center justify-center gap-8 mb-10"
+          className="flex items-center justify-center gap-10 mb-12"
         >
           {[
-            { value: "20", label: "Travelers" },
+            { value: "3", label: "Travelers" },
             { value: "7", label: "Days" },
             { value: "PKR 10L", label: "Target" },
           ].map((stat) => (
             <div key={stat.label} className="text-center">
-              <div className="text-2xl font-bold gold-text font-display">{stat.value}</div>
-              <div className="text-white/50 text-xs uppercase tracking-widest">{stat.label}</div>
+              <div className="text-3xl font-bold gold-text font-display">{stat.value}</div>
+              <div className="text-white/50 text-xs uppercase tracking-widest mt-0.5">{stat.label}</div>
             </div>
           ))}
         </motion.div>
 
-        {/* CTAs */}
+        {/* CTAs — wider buttons */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.9 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center"
+          className="flex flex-col sm:flex-row gap-4 justify-center items-center"
         >
           <a
             href="#contribute"
-            className="btn-gold text-navy-950 font-bold text-base px-8 py-4 rounded-full inline-block"
+            className="btn-gold text-navy-950 font-bold text-base px-14 py-4 rounded-full inline-block w-full sm:w-auto text-center min-w-[220px]"
           >
             ✨ Contribute Now
           </a>
           <a
             href="#destinations"
-            className="glass-card text-white font-semibold text-base px-8 py-4 rounded-full inline-flex items-center gap-2 hover:border-gold-500/40 transition-colors border border-white/10"
+            className="glass-card text-white font-semibold text-base px-14 py-4 rounded-full inline-flex items-center justify-center gap-2 hover:border-gold-500/40 transition-colors border border-white/15 w-full sm:w-auto min-w-[220px]"
           >
             <Play size={16} className="text-gold-400" />
             Explore Baku

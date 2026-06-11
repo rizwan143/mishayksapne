@@ -39,7 +39,7 @@ export default function CountdownSection() {
   ];
 
   return (
-    <section className="py-24 px-4 sm:px-6 relative overflow-hidden">
+    <section className="py-20 px-4 sm:px-6 relative overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 z-0">
         <img

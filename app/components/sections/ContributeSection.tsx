@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { useRef } from "react";
-import { addContribution, TARGET } from "@/app/lib/store";
+import { addContribution } from "@/app/lib/store";
 import { PAYMENT_METHODS } from "@/app/lib/data";
 import { CheckCircle, Lock } from "lucide-react";
 
@@ -23,7 +23,6 @@ export default function ContributeSection() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
-
     if (!amount || Number(amount) < 100) {
       setError("Please enter a minimum contribution of PKR 100");
       return;
@@ -32,9 +31,7 @@ export default function ContributeSection() {
       setError("Please enter your name");
       return;
     }
-
     setLoading(true);
-    // Simulate API call
     await new Promise((r) => setTimeout(r, 1500));
     addContribution(name.trim(), Number(amount), message);
     setLoading(false);
@@ -49,10 +46,10 @@ export default function ContributeSection() {
   };
 
   return (
-    <section id="contribute" className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-navy-950 via-[#0a1628] to-navy-950">
-      <div className="max-w-3xl mx-auto" ref={ref}>
+    <section id="contribute" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-navy-950 via-[#0a1628] to-navy-950">
+      <div className="max-w-2xl mx-auto" ref={ref}>
         {/* Header */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-10">
           <motion.p
             initial={{ opacity: 0 }}
             animate={inView ? { opacity: 1 } : {}}
@@ -72,17 +69,18 @@ export default function ContributeSection() {
             initial={{ opacity: 0 }}
             animate={inView ? { opacity: 1 } : {}}
             transition={{ delay: 0.2 }}
-            className="text-white/50 text-lg"
+            className="text-white/50 text-base"
           >
             Every rupee brings us closer to Baku. Contributors of PKR 50,000+ get a spot on the trip!
           </motion.p>
         </div>
 
+        {/* Card — centered, max-w-2xl, shadow glow */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.3 }}
-          className="glass-card rounded-3xl p-8 sm:p-10 border border-gold-500/15"
+          className="glass-card rounded-3xl p-8 sm:p-10 border border-gold-500/20 shadow-[0_0_60px_rgba(212,160,23,0.08)]"
         >
           <AnimatePresence mode="wait">
             {success ? (
@@ -91,7 +89,7 @@ export default function ContributeSection() {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
-                className="text-center py-8"
+                className="text-center py-10"
               >
                 <motion.div
                   initial={{ scale: 0 }}
@@ -112,7 +110,7 @@ export default function ContributeSection() {
                 <p className="text-white/40 text-sm mb-8">
                   We will contact you with payment details via WhatsApp shortly.
                 </p>
-                <button onClick={resetForm} className="btn-gold text-navy-950 font-bold px-8 py-3 rounded-full">
+                <button onClick={resetForm} className="btn-gold text-navy-950 font-bold px-10 py-3 rounded-full">
                   Make Another Contribution
                 </button>
               </motion.div>
@@ -124,16 +122,16 @@ export default function ContributeSection() {
                 initial={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
               >
-                {/* Amount */}
+                {/* Amount presets */}
                 <div>
-                  <label className="text-white/70 text-sm font-medium mb-2 block">Contribution Amount (PKR)</label>
-                  <div className="flex flex-wrap gap-3 mb-3">
+                  <label className="text-white/70 text-sm font-medium mb-3 block">Contribution Amount (PKR)</label>
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-3">
                     {PRESET_AMOUNTS.map((preset) => (
                       <button
                         key={preset}
                         type="button"
                         onClick={() => setAmount(preset)}
-                        className={`px-4 py-2 rounded-full text-sm font-semibold transition-all duration-200 ${
+                        className={`py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 ${
                           amount === preset
                             ? "bg-gold-500 text-navy-950"
                             : "glass-card text-white/70 hover:text-gold-400 hover:border-gold-500/40 border border-white/10"
@@ -189,7 +187,7 @@ export default function ContributeSection() {
                         onClick={() => setPaymentMethod(pm.id)}
                         className={`p-3 rounded-xl text-left transition-all duration-200 ${
                           paymentMethod === pm.id
-                            ? "border-2 border-gold-500/60 bg-gold-500/10"
+                            ? "border-2 border-gold-500/70 bg-gold-500/10"
                             : "glass-card border border-white/10 hover:border-gold-500/30"
                         }`}
                       >

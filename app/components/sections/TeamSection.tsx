@@ -8,7 +8,7 @@ export default function TeamSection() {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="team" className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-navy-950 via-[#0a1628] to-navy-950">
+    <section id="team" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-navy-950 via-[#0a1628] to-navy-950">
       <div className="max-w-6xl mx-auto">
         <div ref={ref} className="text-center mb-16">
           <motion.p

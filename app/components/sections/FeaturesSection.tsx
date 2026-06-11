@@ -5,13 +5,35 @@ import { FEATURES } from "@/app/lib/data";
 
 export default function FeaturesSection() {
   const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-100px" });
+  const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-navy-950 via-[#0a1628] to-navy-950">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-navy-950 via-[#0a1628] to-navy-950">
       <div className="max-w-7xl mx-auto">
+        {/* Azerbaijan image banner */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.98 }}
+          animate={inView ? { opacity: 1, scale: 1 } : {}}
+          transition={{ duration: 0.7 }}
+          className="relative rounded-3xl overflow-hidden mb-14"
+          style={{ height: "220px" }}
+          ref={ref}
+        >
+          <img
+            src="https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=1400&q=85"
+            alt="Azerbaijan landscape"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-navy-950/85 via-navy-950/40 to-navy-950/85" />
+          <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 text-center px-4">
+            <span className="text-gold-400 text-xs uppercase tracking-[0.3em] font-semibold">Azerbaijan</span>
+            <h3 className="font-display text-3xl sm:text-4xl font-bold text-white">The Land of Fire</h3>
+            <p className="text-white/55 text-sm max-w-md">Where ancient history meets breathtaking modernity</p>
+          </div>
+        </motion.div>
+
         {/* Header */}
-        <div ref={ref} className="text-center mb-16">
+        <div className="text-center mb-12">
           <motion.p
             initial={{ opacity: 0 }}
             animate={inView ? { opacity: 1 } : {}}
@@ -53,10 +75,7 @@ export default function FeaturesSection() {
               <h3 className="font-display text-xl font-bold text-white mb-3 group-hover:text-gold-400 transition-colors duration-200">
                 {feature.title}
               </h3>
-              <p className="text-white/55 text-sm leading-relaxed">
-                {feature.description}
-              </p>
-              {/* Accent line */}
+              <p className="text-white/55 text-sm leading-relaxed">{feature.description}</p>
               <div className="mt-5 h-0.5 w-0 bg-gradient-to-r from-gold-500 to-transparent group-hover:w-full transition-all duration-500 rounded-full" />
             </motion.div>
           ))}

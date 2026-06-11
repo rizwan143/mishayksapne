@@ -3,7 +3,7 @@ export const FUNDRAISER = {
   raised: 450000,
   currency: "PKR",
   departureDate: new Date("2025-09-15T06:00:00"),
-  groupSize: 20,
+  groupSize: 3,
   duration: "7 Days / 6 Nights",
 };
 
@@ -12,7 +12,7 @@ export const DESTINATIONS = [
     id: 1,
     title: "Flame Towers",
     description: "Three iconic skyscrapers resembling flames that illuminate Baku's skyline at night with a dazzling LED display.",
-    image: "https://images.unsplash.com/photo-1601601392250-8e4d60b5a1be?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1586957013058-df1c68c96b1b?w=800&q=80",
     tag: "Iconic Landmark",
   },
   {
@@ -26,7 +26,7 @@ export const DESTINATIONS = [
     id: 3,
     title: "Old City (Icherisheher)",
     description: "A UNESCO World Heritage Site, this ancient walled city carries centuries of history within its cobblestone streets.",
-    image: "https://images.unsplash.com/photo-1529655683826-aba9b3e77383?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1555993539-1732b0258235?w=800&q=80",
     tag: "UNESCO Heritage",
   },
   {
@@ -40,7 +40,7 @@ export const DESTINATIONS = [
     id: 5,
     title: "Gobustan National Park",
     description: "An otherworldly landscape of ancient rock carvings, mud volcanoes, and prehistoric art over 40,000 years old.",
-    image: "https://images.unsplash.com/photo-1575832016714-8c5e9a9e4e9a?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80",
     tag: "Nature",
   },
   {
@@ -104,24 +104,6 @@ export const TEAM_MEMBERS = [
     role: "Photography Lead",
     image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80",
   },
-  {
-    id: 4,
-    name: "Ayesha Malik",
-    role: "Itinerary Planner",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&q=80",
-  },
-  {
-    id: 5,
-    name: "Hassan Mirza",
-    role: "Logistics Head",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&q=80",
-  },
-  {
-    id: 6,
-    name: "Zara Hussain",
-    role: "Social Media",
-    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&q=80",
-  },
 ];
 
 export const TESTIMONIALS = [
@@ -155,12 +137,12 @@ export const TESTIMONIALS = [
 ];
 
 export const GALLERY_IMAGES = [
-  { src: "https://images.unsplash.com/photo-1601601392250-8e4d60b5a1be?w=600&q=80", alt: "Flame Towers Night", tall: true },
-  { src: "https://images.unsplash.com/photo-1529655683826-aba9b3e77383?w=600&q=80", alt: "Old City Baku", tall: false },
+  { src: "https://images.unsplash.com/photo-1586957013058-df1c68c96b1b?w=600&q=80", alt: "Flame Towers Baku", tall: true },
+  { src: "https://images.unsplash.com/photo-1555993539-1732b0258235?w=600&q=80", alt: "Old City Baku", tall: false },
   { src: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80", alt: "Modern Architecture", tall: false },
   { src: "https://images.unsplash.com/photo-1533929736458-ca588d08c8be?w=600&q=80", alt: "Boulevard Evening", tall: true },
   { src: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80", alt: "Caspian Sunset", tall: false },
-  { src: "https://images.unsplash.com/photo-1575832016714-8c5e9a9e4e9a?w=600&q=80", alt: "Gobustan Landscape", tall: false },
+  { src: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&q=80", alt: "Mountain Landscape", tall: false },
   { src: "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=600&q=80", alt: "Baku Old City Walls", tall: true },
   { src: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=600&q=80", alt: "Travel Together", tall: false },
 ];
