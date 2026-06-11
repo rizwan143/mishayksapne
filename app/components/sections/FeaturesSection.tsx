@@ -1,0 +1,67 @@
+"use client";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+import { FEATURES } from "@/app/lib/data";
+
+export default function FeaturesSection() {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, margin: "-100px" });
+
+  return (
+    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-navy-950 via-[#0a1628] to-navy-950">
+      <div className="max-w-7xl mx-auto">
+        {/* Header */}
+        <div ref={ref} className="text-center mb-16">
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={inView ? { opacity: 1 } : {}}
+            className="text-gold-400 text-sm uppercase tracking-widest font-semibold mb-3"
+          >
+            The Land of Fire
+          </motion.p>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ delay: 0.1 }}
+            className="font-display text-4xl sm:text-5xl font-bold text-white mb-4"
+          >
+            Why <span className="gold-text">Baku</span> Will Steal Your Heart
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={inView ? { opacity: 1 } : {}}
+            transition={{ delay: 0.2 }}
+            className="text-white/50 max-w-xl mx-auto text-lg"
+          >
+            Six reasons why this journey is worth every rupee contributed.
+          </motion.p>
+        </div>
+
+        {/* Feature Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {FEATURES.map((feature, i) => (
+            <motion.div
+              key={feature.title}
+              initial={{ opacity: 0, y: 40 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: 0.1 + i * 0.08 }}
+              className="glass-card rounded-2xl p-7 group hover:border-gold-500/30 transition-all duration-300 hover:-translate-y-1"
+            >
+              <div className="text-4xl mb-4 transform group-hover:scale-110 transition-transform duration-300">
+                {feature.icon}
+              </div>
+              <h3 className="font-display text-xl font-bold text-white mb-3 group-hover:text-gold-400 transition-colors duration-200">
+                {feature.title}
+              </h3>
+              <p className="text-white/55 text-sm leading-relaxed">
+                {feature.description}
+              </p>
+              {/* Accent line */}
+              <div className="mt-5 h-0.5 w-0 bg-gradient-to-r from-gold-500 to-transparent group-hover:w-full transition-all duration-500 rounded-full" />
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
