@@ -10,9 +10,9 @@ export default function FAQSection() {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="faq" className="py-20 px-4 sm:px-6 lg:px-8">
+    <section id="faq" className="py-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-3xl mx-auto">
-        <div ref={ref} className="text-center mb-16">
+        <div ref={ref} className="text-center mb-14">
           <motion.p
             initial={{ opacity: 0 }}
             animate={inView ? { opacity: 1 } : {}}
@@ -40,6 +40,7 @@ export default function FAQSection() {
               className={`glass-card rounded-2xl overflow-hidden border transition-all duration-300 ${
                 open === i ? "border-gold-500/30" : "border-white/5"
               }`}
+              style={{ textAlign: "left" }}
             >
               <button
                 className="w-full px-6 py-5 flex items-center justify-between text-left gap-4"
@@ -52,7 +53,6 @@ export default function FAQSection() {
                   {open === i ? <Minus size={14} /> : <Plus size={14} />}
                 </div>
               </button>
-
               <AnimatePresence>
                 {open === i && (
                   <motion.div

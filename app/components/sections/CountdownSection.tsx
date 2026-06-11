@@ -39,8 +39,7 @@ export default function CountdownSection() {
   ];
 
   return (
-    <section className="py-20 px-4 sm:px-6 relative overflow-hidden">
-      {/* Background */}
+    <section className="py-24 px-4 sm:px-6 relative overflow-hidden">
       <div className="absolute inset-0 z-0">
         <img
           src="https://images.unsplash.com/photo-1533929736458-ca588d08c8be?w=1920&q=80"
@@ -72,7 +71,7 @@ export default function CountdownSection() {
           transition={{ delay: 0.15 }}
           className="text-white/40 mb-12 text-sm"
         >
-          Departing: {FUNDRAISER.departureDate.toLocaleDateString("en-PK", { weekday: "long", year: "numeric", month: "long", day: "numeric" })}
+          Departing: Wednesday, 15 July 2026
         </motion.p>
 
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6">
@@ -98,7 +97,7 @@ export default function CountdownSection() {
           transition={{ delay: 0.7 }}
           className="mt-10 flex flex-wrap items-center justify-center gap-6 text-white/40 text-sm"
         >
-          <span>✈️ Departure: Sept 15, 2025</span>
+          <span>✈️ Departure: 15 July 2026</span>
           <span>🏨 6 Nights in Baku</span>
           <span>👥 Group of {FUNDRAISER.groupSize}</span>
           <span>📍 Azerbaijan</span>

@@ -7,7 +7,6 @@ const NAV_LINKS = [
   { href: "#destinations", label: "Destinations" },
   { href: "#progress", label: "Progress" },
   { href: "#contribute", label: "Contribute" },
-  { href: "#team", label: "Team" },
   { href: "#faq", label: "FAQ" },
   { href: "#contact", label: "Contact" },
 ];
@@ -30,10 +29,11 @@ export default function Navbar() {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled ? "py-2 glass-card shadow-2xl shadow-black/40" : "py-4 bg-transparent"
       }`}
+      style={{ textAlign: "left" }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-2 group">
+        <a href="#" className="flex items-center gap-2 group shrink-0">
           <span className="text-2xl">✈️</span>
           <span className="font-display font-bold text-xl">
             <span className="gold-text">Baku</span>
@@ -54,15 +54,15 @@ export default function Navbar() {
           ))}
         </div>
 
-        {/* CTA */}
+        {/* CTA — wider */}
         <a
           href="#contribute"
-          className="hidden md:block btn-gold text-navy-950 font-semibold text-sm px-5 py-2.5 rounded-full"
+          className="hidden md:block btn-gold text-navy-950 font-bold text-sm px-8 py-2.5 rounded-full min-w-[160px] text-center"
         >
-          Contribute Now
+          ✨ Contribute Now
         </a>
 
-        {/* Mobile Menu Toggle */}
+        {/* Mobile Toggle */}
         <button
           className="md:hidden text-white/80 hover:text-gold-400"
           onClick={() => setOpen(!open)}
@@ -80,6 +80,7 @@ export default function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden glass-card border-t border-gold-500/10 overflow-hidden"
+            style={{ textAlign: "left" }}
           >
             <div className="px-6 py-4 flex flex-col gap-4">
               {NAV_LINKS.map((link) => (
@@ -94,10 +95,10 @@ export default function Navbar() {
               ))}
               <a
                 href="#contribute"
-                className="btn-gold text-center text-navy-950 font-semibold text-sm px-5 py-3 rounded-full mt-2"
+                className="btn-gold text-center text-navy-950 font-bold text-sm px-5 py-3 rounded-full mt-2"
                 onClick={() => setOpen(false)}
               >
-                Contribute Now
+                ✨ Contribute Now
               </a>
             </div>
           </motion.div>

@@ -2,7 +2,7 @@ export const FUNDRAISER = {
   target: 1000000,
   raised: 450000,
   currency: "PKR",
-  departureDate: new Date("2025-09-15T06:00:00"),
+  departureDate: new Date("2026-07-15T06:00:00"),
   groupSize: 3,
   duration: "7 Days / 6 Nights",
 };
@@ -119,8 +119,8 @@ export const FAQS = [
 
 export const PAYMENT_METHODS = [
   { id: "bank", name: "Bank Transfer", icon: "🏦", detail: "HBL — IBAN: PK36HABB0000012345678901" },
-  { id: "easypaisa", name: "Easypaisa", icon: "📱", detail: "Account: 03XX-XXXXXXX" },
-  { id: "jazzcash", name: "JazzCash", icon: "💳", detail: "Account: 03XX-XXXXXXX" },
+  { id: "easypaisa", name: "Easypaisa", icon: "📱", detail: "03070217380" },
+  { id: "jazzcash", name: "JazzCash", icon: "💳", detail: "03070217380" },
   { id: "stripe", name: "Stripe", icon: "💳", detail: "International Card Payments" },
   { id: "paypal", name: "PayPal", icon: "🌐", detail: "fundraise@bakutrip.pk" },
 ];

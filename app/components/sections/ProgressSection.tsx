@@ -2,7 +2,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import { getRaised, subscribe, TARGET } from "@/app/lib/store";
-import { RadialBarChart, RadialBar, ResponsiveContainer, PieChart, Pie, Cell } from "recharts";
+import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
 
 function formatPKR(n: number) {
   if (n >= 1000000) return `PKR ${(n / 1000000).toFixed(2)}M`;
@@ -50,10 +50,10 @@ export default function ProgressSection() {
   ];
 
   return (
-    <section id="progress" className="py-20 px-4 sm:px-6 lg:px-8">
+    <section id="progress" className="py-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto" ref={sectionRef}>
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-14">
           <motion.p
             initial={{ opacity: 0 }}
             animate={inView ? { opacity: 1 } : {}}
@@ -99,14 +99,11 @@ export default function ProgressSection() {
                   </Pie>
                 </PieChart>
               </ResponsiveContainer>
-              {/* Center text */}
               <div className="absolute inset-0 flex flex-col items-center justify-center">
                 <span className="text-3xl font-bold gold-text font-display">{pct.toFixed(0)}%</span>
                 <span className="text-white/40 text-xs uppercase tracking-widest">Funded</span>
               </div>
             </div>
-
-            {/* Legend */}
             <div className="flex gap-8 mt-4">
               <div className="flex items-center gap-2">
                 <div className="w-3 h-3 rounded-full bg-gold-500" />
@@ -120,13 +117,12 @@ export default function ProgressSection() {
           </motion.div>
 
           {/* Stats */}
-          <div className="space-y-5">
-            {/* Target */}
+          <div className="space-y-4" style={{ textAlign: "left" }}>
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               animate={inView ? { opacity: 1, x: 0 } : {}}
               transition={{ delay: 0.1 }}
-              className="glass-card rounded-2xl p-6 flex items-center justify-between group hover:border-gold-500/30 transition-all"
+              className="glass-card rounded-2xl p-6 flex items-center justify-between hover:border-gold-500/30 transition-all"
             >
               <div>
                 <div className="text-white/40 text-xs uppercase tracking-widest mb-1">Total Target</div>
@@ -135,12 +131,11 @@ export default function ProgressSection() {
               <div className="text-4xl">🎯</div>
             </motion.div>
 
-            {/* Raised */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               animate={inView ? { opacity: 1, x: 0 } : {}}
               transition={{ delay: 0.2 }}
-              className="glass-card rounded-2xl p-6 flex items-center justify-between border border-gold-500/20 group hover:border-gold-500/40 transition-all"
+              className="glass-card rounded-2xl p-6 flex items-center justify-between border border-gold-500/20 hover:border-gold-500/40 transition-all"
             >
               <div>
                 <div className="text-gold-400/70 text-xs uppercase tracking-widest mb-1">Total Raised</div>
@@ -151,12 +146,11 @@ export default function ProgressSection() {
               <div className="text-4xl">💰</div>
             </motion.div>
 
-            {/* Remaining */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               animate={inView ? { opacity: 1, x: 0 } : {}}
               transition={{ delay: 0.3 }}
-              className="glass-card rounded-2xl p-6 flex items-center justify-between group hover:border-azure-400/30 transition-all"
+              className="glass-card rounded-2xl p-6 flex items-center justify-between hover:border-azure-400/30 transition-all"
             >
               <div>
                 <div className="text-azure-400/70 text-xs uppercase tracking-widest mb-1">Still Needed</div>
@@ -167,7 +161,6 @@ export default function ProgressSection() {
               <div className="text-4xl">📊</div>
             </motion.div>
 
-            {/* Progress bar */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               animate={inView ? { opacity: 1, x: 0 } : {}}
@@ -191,22 +184,6 @@ export default function ProgressSection() {
             </motion.div>
           </div>
         </div>
-
-        {/* Recent Contributions */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ delay: 0.5 }}
-          className="mt-10 glass-card rounded-2xl p-6"
-        >
-          <h3 className="text-white font-semibold mb-4 flex items-center gap-2">
-            <span className="w-2 h-2 bg-gold-400 rounded-full animate-pulse" />
-            Recent Contributors
-          </h3>
-          <div className="text-white/40 text-sm">
-            Join dozens of generous contributors who have already helped us get here. Your contribution makes a real difference.
-          </div>
-        </motion.div>
       </div>
     </section>
   );

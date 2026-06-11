@@ -7,7 +7,6 @@ import FeaturesSection from "./components/sections/FeaturesSection";
 import ProgressSection from "./components/sections/ProgressSection";
 import ContributeSection from "./components/sections/ContributeSection";
 import CountdownSection from "./components/sections/CountdownSection";
-import TeamSection from "./components/sections/TeamSection";
 import TestimonialsSection from "./components/sections/TestimonialsSection";
 import GallerySection from "./components/sections/GallerySection";
 import FAQSection from "./components/sections/FAQSection";
@@ -25,7 +24,6 @@ export default function Home() {
         <ProgressSection />
         <ContributeSection />
         <CountdownSection />
-        <TeamSection />
         <TestimonialsSection />
         <GallerySection />
         <FAQSection />

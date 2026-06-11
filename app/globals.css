@@ -22,6 +22,18 @@ body {
   color: #E8E8E8;
   font-family: var(--font-body);
   overflow-x: hidden;
+  text-align: center;
+}
+
+/* All section inner containers default centered */
+section > div,
+section > .max-w-7xl,
+section > .max-w-6xl,
+section > .max-w-5xl,
+section > .max-w-3xl,
+section > .max-w-2xl {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Glass card */
@@ -60,9 +72,13 @@ body {
 /* Section spacing */
 section { position: relative; }
 
-/* Image overlay */
-.img-overlay {
-  background: linear-gradient(to top, rgba(6,14,26,0.9) 0%, rgba(6,14,26,0.3) 60%, transparent 100%);
+/* Keep text left inside cards and forms */
+.glass-card,
+form,
+input,
+textarea,
+.text-left-override {
+  text-align: left;
 }
 
 @keyframes shimmer {
@@ -73,11 +89,6 @@ section { position: relative; }
 @keyframes float {
   0%, 100% { transform: translateY(0px); }
   50% { transform: translateY(-12px); }
-}
-
-@keyframes countup {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
 }
 
 .animate-float { animation: float 6s ease-in-out infinite; }
