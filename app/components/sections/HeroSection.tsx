@@ -5,7 +5,7 @@ import { ChevronDown, Play } from "lucide-react";
 export default function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background — beautiful night city skyline */}
+      {/* Background */}
       <div className="absolute inset-0 z-0">
         <img
           src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=1920&q=90"
@@ -29,12 +29,13 @@ export default function HeroSection() {
 
       {/* Content */}
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center">
+
         {/* Badge */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="inline-flex items-center gap-2 glass-card px-5 py-2 rounded-full mb-8 border border-gold-500/30"
+          className="inline-flex items-center gap-2 glass-card px-5 py-2 rounded-full mb-6 border border-gold-500/30"
         >
           <span className="w-2 h-2 bg-gold-400 rounded-full animate-pulse" />
           <span className="text-gold-400 text-sm font-medium tracking-widest uppercase">Group Fundraiser · Baku, Azerbaijan</span>
@@ -45,46 +46,56 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.35 }}
-          className="mb-4"
+          className="mb-5"
         >
           <span className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold gold-text">
             Mishay Dream ✨
           </span>
-          <span className="block text-white/60 text-base sm:text-lg font-medium tracking-wide mt-1">
+          <span className="block text-white/55 text-base sm:text-lg font-medium tracking-wide mt-1">
             Turning Dreams Into Destinations.
           </span>
         </motion.div>
 
-        {/* Headline */}
+        {/* MAIN HEADLINE — Urdu */}
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="font-display text-4xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight"
+          className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4 leading-snug"
+          style={{ fontFamily: "'Noto Nastaliq Urdu', 'Jameel Noori Nastaleeq', serif", direction: "rtl", lineHeight: "1.7" }}
         >
-          Join Us on an{" "}
-          <span className="gold-text">Unforgettable</span>
-          <br />
-          Journey to{" "}
-          <span className="italic text-azure-400">Baku</span>
+          ایک سپنا اے میرا... میں باکو چلے جاواں!{" "}
+          <span className="text-2xl">✈️</span>
         </motion.h1>
 
-        {/* Subheadline */}
+        {/* Funny subtitle */}
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.6 }}
-          className="text-white/70 text-lg sm:text-xl max-w-2xl mx-auto mb-10 leading-relaxed"
+          transition={{ duration: 0.6, delay: 0.65 }}
+          className="text-gold-400/90 text-lg sm:text-xl mb-3"
+          style={{ fontFamily: "'Noto Nastaliq Urdu', serif", direction: "rtl" }}
         >
-          Help us make this dream adventure a reality and become part of our journey to the Land of Fire.
+          باکو جانا اے... پر پیسے کہندے نے 'پہلاں مینوں مناؤ' 😭💸
+        </motion.p>
+
+        {/* Rabba line */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.75 }}
+          className="text-white/50 text-sm sm:text-base mb-8"
+          style={{ fontFamily: "'Noto Nastaliq Urdu', serif", direction: "rtl" }}
+        >
+          ربا اِک واری ویزا لگوا دے، باکو دے نظارے دِکھا دے! 😅
         </motion.p>
 
         {/* Stats */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.7 }}
-          className="flex items-center justify-center gap-10 mb-12"
+          transition={{ duration: 0.7, delay: 0.8 }}
+          className="flex items-center justify-center gap-10 mb-10"
         >
           {[
             { value: "3", label: "Travelers" },
@@ -98,11 +109,11 @@ export default function HeroSection() {
           ))}
         </motion.div>
 
-        {/* CTAs — wide buttons */}
+        {/* CTAs */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.9 }}
+          transition={{ duration: 0.7, delay: 0.95 }}
           className="flex flex-col sm:flex-row gap-4 justify-center items-center"
         >
           <a

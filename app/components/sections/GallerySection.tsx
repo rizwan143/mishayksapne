@@ -22,10 +22,19 @@ export default function GallerySection() {
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.1 }}
-            className="font-display text-4xl sm:text-5xl font-bold text-white"
+            className="font-display text-4xl sm:text-5xl font-bold text-white mb-3"
           >
             A Visual <span className="gold-text">Taste of Baku</span>
           </motion.h2>
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={inView ? { opacity: 1 } : {}}
+            transition={{ delay: 0.2 }}
+            className="text-gold-400/75 text-base sm:text-lg"
+            style={{ fontFamily: "'Noto Nastaliq Urdu', serif", direction: "rtl" }}
+          >
+            باکو دیاں فوٹواں وی مل جان گیاں! 📸😂
+          </motion.p>
         </div>
 
         {/* Masonry-style grid */}

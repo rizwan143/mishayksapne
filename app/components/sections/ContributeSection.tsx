@@ -3,10 +3,15 @@ import { useState } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { useRef } from "react";
 import { addContribution } from "@/app/lib/store";
-import { PAYMENT_METHODS } from "@/app/lib/data";
 import { CheckCircle, Lock } from "lucide-react";
 
 const PRESET_AMOUNTS = [1000, 5000, 10000, 25000];
+
+const PAYMENT_METHODS = [
+  { id: "easypaisa", name: "Easypaisa", icon: "📱", detail: "03070217380" },
+  { id: "jazzcash", name: "JazzCash", icon: "💳", detail: "03070217380" },
+  { id: "bank", name: "Bank Transfer", icon: "🏦", detail: "HBL — IBAN: PK36HABB0000012345678901" },
+];
 
 export default function ContributeSection() {
   const ref = useRef(null);
@@ -15,7 +20,7 @@ export default function ContributeSection() {
   const [amount, setAmount] = useState<number | "">("");
   const [name, setName] = useState("");
   const [message, setMessage] = useState("");
-  const [paymentMethod, setPaymentMethod] = useState("bank");
+  const [paymentMethod, setPaymentMethod] = useState("easypaisa");
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState("");
@@ -46,8 +51,9 @@ export default function ContributeSection() {
   };
 
   return (
-    <section id="contribute" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-navy-950 via-[#0a1628] to-navy-950">
+    <section id="contribute" className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-navy-950 via-[#0a1628] to-navy-950">
       <div className="max-w-2xl mx-auto" ref={ref}>
+
         {/* Header */}
         <div className="text-center mb-10">
           <motion.p
@@ -65,21 +71,33 @@ export default function ContributeSection() {
           >
             Make a <span className="gold-text">Contribution</span>
           </motion.h2>
+
+          {/* Funny Punjabi line */}
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ delay: 0.2 }}
+            className="text-gold-400/80 text-base sm:text-lg mb-2"
+            style={{ fontFamily: "'Noto Nastaliq Urdu', serif", direction: "rtl" }}
+          >
+            ہر contribution نال اسی باکو ول اِک قدم ہور نیڑے ہو جاندے آں۔ ❤️
+          </motion.p>
           <motion.p
             initial={{ opacity: 0 }}
             animate={inView ? { opacity: 1 } : {}}
-            transition={{ delay: 0.2 }}
-            className="text-white/50 text-base"
+            transition={{ delay: 0.28 }}
+            className="text-white/40 text-sm"
+            style={{ fontFamily: "'Noto Nastaliq Urdu', serif", direction: "rtl" }}
           >
-            Every rupee brings us closer to Baku. Contributors of PKR 50,000+ get a spot on the trip!
+            تہاڈا 5000 روپے دا contribution، سادے suitcase چ اِک ہور جوڑا کپڑاں دا سبب بن سکدا اے۔ 😆
           </motion.p>
         </div>
 
-        {/* Card — centered, max-w-2xl, shadow glow */}
+        {/* Card */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ delay: 0.3 }}
+          transition={{ delay: 0.35 }}
           className="glass-card rounded-3xl p-8 sm:p-10 border border-gold-500/20 shadow-[0_0_60px_rgba(212,160,23,0.08)]"
         >
           <AnimatePresence mode="wait">
@@ -100,18 +118,21 @@ export default function ContributeSection() {
                   <CheckCircle size={72} className="text-gold-400" />
                 </motion.div>
                 <h3 className="font-display text-3xl font-bold text-white mb-3">
-                  Shukria, {name}! 🙏
+                  Shukriya, {name}! 🙏
                 </h3>
-                <p className="text-white/60 mb-2">
+                <p
+                  className="text-white/60 mb-2 text-base"
+                  style={{ fontFamily: "'Noto Nastaliq Urdu', serif", direction: "rtl" }}
+                >
+                  باکو دیاں فوٹواں وی مل جان گیاں! 📸😂
+                </p>
+                <p className="text-white/50 text-sm mb-8">
                   Your contribution of{" "}
                   <span className="text-gold-400 font-bold">PKR {Number(amount).toLocaleString()}</span>{" "}
-                  has been recorded.
-                </p>
-                <p className="text-white/40 text-sm mb-8">
-                  We will contact you with payment details via WhatsApp shortly.
+                  has been recorded. We'll contact you via WhatsApp with payment details shortly.
                 </p>
                 <button onClick={resetForm} className="btn-gold text-navy-950 font-bold px-10 py-3 rounded-full">
-                  Make Another Contribution
+                  Contribute Again
                 </button>
               </motion.div>
             ) : (
@@ -119,10 +140,11 @@ export default function ContributeSection() {
                 key="form"
                 onSubmit={handleSubmit}
                 className="space-y-6"
+                style={{ textAlign: "left" }}
                 initial={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
               >
-                {/* Amount presets */}
+                {/* Amount */}
                 <div>
                   <label className="text-white/70 text-sm font-medium mb-3 block">Contribution Amount (PKR)</label>
                   <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-3">
@@ -176,10 +198,10 @@ export default function ContributeSection() {
                   />
                 </div>
 
-                {/* Payment Method */}
+                {/* Payment Method — only 3, no Stripe/PayPal */}
                 <div>
                   <label className="text-white/70 text-sm font-medium mb-3 block">Payment Method</label>
-                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                  <div className="grid grid-cols-3 gap-3">
                     {PAYMENT_METHODS.map((pm) => (
                       <button
                         key={pm.id}
@@ -193,9 +215,18 @@ export default function ContributeSection() {
                       >
                         <div className="text-xl mb-1">{pm.icon}</div>
                         <div className="text-white text-xs font-semibold">{pm.name}</div>
-                        <div className="text-white/30 text-xs truncate">{pm.detail}</div>
+                        <div className="text-white/40 text-xs mt-0.5 truncate">{pm.detail}</div>
                       </button>
                     ))}
+                  </div>
+
+                  {/* Selected method instructions */}
+                  <div className="mt-3 glass-card rounded-xl px-4 py-3 border border-gold-500/15">
+                    <p className="text-white/50 text-xs">
+                      {paymentMethod === "easypaisa" && "📱 Send to Easypaisa: 03070217380 — then confirm via WhatsApp"}
+                      {paymentMethod === "jazzcash" && "💳 Send to JazzCash: 03070217380 — then confirm via WhatsApp"}
+                      {paymentMethod === "bank" && "🏦 Bank: HBL · IBAN: PK36HABB0000012345678901 — then confirm via WhatsApp"}
+                    </p>
                   </div>
                 </div>
 
@@ -223,13 +254,13 @@ export default function ContributeSection() {
                   ) : (
                     <>
                       <Lock size={16} />
-                      Confirm Contribution · PKR {amount ? Number(amount).toLocaleString() : "—"}
+                      Confirm · PKR {amount ? Number(amount).toLocaleString() : "—"}
                     </>
                   )}
                 </button>
 
-                <p className="text-white/30 text-xs text-center">
-                  🔒 Your information is secure. Payment details will be shared via WhatsApp after confirmation.
+                <p className="text-white/25 text-xs text-center">
+                  🔒 Your details are safe. We'll reach out on WhatsApp to confirm your transfer.
                 </p>
               </motion.form>
             )}

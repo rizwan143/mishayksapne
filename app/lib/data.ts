@@ -118,9 +118,7 @@ export const FAQS = [
 ];
 
 export const PAYMENT_METHODS = [
-  { id: "bank", name: "Bank Transfer", icon: "🏦", detail: "HBL — IBAN: PK36HABB0000012345678901" },
   { id: "easypaisa", name: "Easypaisa", icon: "📱", detail: "03070217380" },
   { id: "jazzcash", name: "JazzCash", icon: "💳", detail: "03070217380" },
-  { id: "stripe", name: "Stripe", icon: "💳", detail: "International Card Payments" },
-  { id: "paypal", name: "PayPal", icon: "🌐", detail: "fundraise@bakutrip.pk" },
+  { id: "bank", name: "Bank Transfer", icon: "🏦", detail: "HBL — IBAN: PK36HABB0000012345678901" },
 ];
