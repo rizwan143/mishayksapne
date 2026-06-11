@@ -8,12 +8,12 @@ export default function HeroSection() {
       {/* Background */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=1920&q=90"
+          src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?w=1920&q=90"
           alt="Baku City Skyline"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-navy-950/70 via-navy-950/50 to-navy-950" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,rgba(6,14,26,0.85)_100%)]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-navy-950/85 via-navy-950/70 to-navy-950" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_30%,rgba(6,14,26,0.92)_100%)]" />
       </div>
 
       {/* Floating particles */}
