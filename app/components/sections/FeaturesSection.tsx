@@ -47,7 +47,7 @@ export default function FeaturesSection() {
             transition={{ delay: 0.1 }}
             className="font-display text-4xl sm:text-5xl font-bold text-white mb-4"
           >
-            Why <span className="gold-text">Baku</span> Will Steal Your Heart
+            Why Baku Steal <span className="gold-text">Our Heart?</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0 }}

@@ -3,7 +3,7 @@ import { useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Mail, Phone, Send } from "lucide-react";
 
-const CONTACT_EMAIL = "Rizwansultan22@gmail.com";
+const CONTACT_EMAIL = "mishayksapne@gmail.com";
 const WHATSAPP = "03006088886";
 
 export default function ContactSection() {
@@ -16,7 +16,6 @@ export default function ContactSection() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    // Build mailto link and open it
     const subject = encodeURIComponent(`Baku Trip Enquiry from ${form.name}`);
     const body = encodeURIComponent(
       `Name: ${form.name}\nEmail: ${form.email}\n\nMessage:\n${form.message}`
@@ -29,8 +28,10 @@ export default function ContactSection() {
 
   return (
     <section id="contact" className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-navy-950 via-[#0a1628] to-navy-950">
-      <div className="max-w-5xl mx-auto">
-        <div ref={ref} className="text-center mb-14">
+      <div className="max-w-4xl mx-auto" ref={ref}>
+
+        {/* Header */}
+        <div className="text-center mb-14">
           <motion.p
             initial={{ opacity: 0 }}
             animate={inView ? { opacity: 1 } : {}}
@@ -48,98 +49,88 @@ export default function ContactSection() {
           </motion.h2>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
-          {/* Contact info — 2 cols */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ delay: 0.2 }}
-            className="lg:col-span-2 space-y-4"
+        {/* Contact info row */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ delay: 0.2 }}
+          className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10"
+        >
+          {/* Email */}
+          <a
+            href={`mailto:${CONTACT_EMAIL}`}
+            className="glass-card rounded-2xl p-5 flex flex-col items-center gap-3 hover:border-gold-500/40 transition-all group text-center"
           >
-            {/* Email */}
-            <a
-              href={`mailto:${CONTACT_EMAIL}`}
-              className="glass-card rounded-2xl p-5 flex items-center gap-4 hover:border-gold-500/30 transition-all group block"
-            >
-              <div className="text-gold-400 bg-gold-500/10 p-3 rounded-xl shrink-0">
-                <Mail size={20} />
-              </div>
-              <div>
-                <div className="text-white/40 text-xs uppercase tracking-widest mb-0.5">Email</div>
-                <div className="text-white font-medium text-sm break-all group-hover:text-gold-400 transition-colors">
-                  {CONTACT_EMAIL}
-                </div>
-              </div>
-            </a>
-
-            {/* WhatsApp */}
-            <a
-              href={`https://wa.me/92${WHATSAPP.replace(/^0/, "")}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="glass-card rounded-2xl p-5 flex items-center gap-4 hover:border-gold-500/30 transition-all group block"
-            >
-              <div className="text-gold-400 bg-gold-500/10 p-3 rounded-xl shrink-0">
-                <Phone size={20} />
-              </div>
-              <div>
-                <div className="text-white/40 text-xs uppercase tracking-widest mb-0.5">WhatsApp</div>
-                <div className="text-white font-medium group-hover:text-gold-400 transition-colors">
-                  {WHATSAPP}
-                </div>
-              </div>
-            </a>
-
-            {/* Quick WhatsApp CTA */}
-            <a
-              href={`https://wa.me/92${WHATSAPP.replace(/^0/, "")}?text=${encodeURIComponent("Hi! I have a question about the Baku trip.")}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full glass-card rounded-2xl p-4 flex items-center justify-center gap-2 border border-green-500/25 hover:border-green-500/50 transition-all group"
-            >
-              <span className="text-xl">💬</span>
-              <span className="text-green-400 font-semibold text-sm group-hover:text-green-300 transition-colors">
-                Chat on WhatsApp
-              </span>
-            </a>
-
-            <div className="glass-card rounded-2xl p-5">
-              <div className="text-white/40 text-xs uppercase tracking-widest mb-3">Follow Our Journey</div>
-              <div className="flex gap-4">
-                {["📸 Instagram", "📘 Facebook"].map((s) => (
-                  <span key={s} className="text-white/50 text-sm hover:text-gold-400 cursor-pointer transition-colors">
-                    {s}
-                  </span>
-                ))}
+            <div className="text-gold-400 bg-gold-500/10 p-3 rounded-xl">
+              <Mail size={22} />
+            </div>
+            <div>
+              <div className="text-white/40 text-xs uppercase tracking-widest mb-1">Email</div>
+              <div className="text-white text-sm font-medium group-hover:text-gold-400 transition-colors break-all">
+                {CONTACT_EMAIL}
               </div>
             </div>
-          </motion.div>
+          </a>
 
-          {/* Form — 3 cols */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ delay: 0.3 }}
-            className="lg:col-span-3 glass-card rounded-2xl p-7 border border-gold-500/10"
+          {/* WhatsApp number */}
+          <a
+            href={`https://wa.me/92${WHATSAPP.replace(/^0/, "")}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="glass-card rounded-2xl p-5 flex flex-col items-center gap-3 hover:border-gold-500/40 transition-all group text-center"
           >
-            {sent ? (
-              <div className="text-center py-10">
-                <div className="text-5xl mb-4">✉️</div>
-                <h3 className="font-display text-2xl font-bold text-white mb-2">Message Sent!</h3>
-                <p className="text-white/50 text-sm">
-                  Your email client has opened. We'll reply to you within 24 hours.
-                </p>
-                <button
-                  onClick={() => setSent(false)}
-                  className="mt-6 btn-gold text-navy-950 font-bold px-8 py-3 rounded-full text-sm"
-                >
-                  Send Another
-                </button>
+            <div className="text-gold-400 bg-gold-500/10 p-3 rounded-xl">
+              <Phone size={22} />
+            </div>
+            <div>
+              <div className="text-white/40 text-xs uppercase tracking-widest mb-1">WhatsApp</div>
+              <div className="text-white text-sm font-medium group-hover:text-gold-400 transition-colors">
+                {WHATSAPP}
               </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-4">
+            </div>
+          </a>
+
+          {/* WhatsApp CTA */}
+          <a
+            href={`https://wa.me/92${WHATSAPP.replace(/^0/, "")}?text=${encodeURIComponent("Hi! I have a question about the Baku trip.")}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="glass-card rounded-2xl p-5 flex flex-col items-center justify-center gap-3 border border-green-500/25 hover:border-green-400/50 transition-all group text-center"
+          >
+            <span className="text-3xl">💬</span>
+            <div className="text-green-400 font-semibold text-sm group-hover:text-green-300 transition-colors">
+              Chat on WhatsApp
+            </div>
+          </a>
+        </motion.div>
+
+        {/* Message form */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ delay: 0.35 }}
+          className="glass-card rounded-3xl p-8 sm:p-10 border border-gold-500/15 shadow-[0_0_60px_rgba(212,160,23,0.06)]"
+          style={{ textAlign: "left" }}
+        >
+          {sent ? (
+            <div className="text-center py-10">
+              <div className="text-5xl mb-5">✉️</div>
+              <h3 className="font-display text-2xl font-bold text-white mb-2">Message Sent!</h3>
+              <p className="text-white/50 text-sm mb-6">
+                Your email client has opened. We'll reply within 24 hours.
+              </p>
+              <button
+                onClick={() => setSent(false)}
+                className="btn-gold text-navy-950 font-bold px-10 py-3 rounded-full text-sm"
+              >
+                Send Another
+              </button>
+            </div>
+          ) : (
+            <form onSubmit={handleSubmit} className="space-y-5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>
-                  <label className="text-white/60 text-sm mb-1.5 block">Your Name</label>
+                  <label className="text-white/60 text-sm font-medium mb-2 block">Your Name</label>
                   <input
                     type="text"
                     required
@@ -150,7 +141,7 @@ export default function ContactSection() {
                   />
                 </div>
                 <div>
-                  <label className="text-white/60 text-sm mb-1.5 block">Your Email</label>
+                  <label className="text-white/60 text-sm font-medium mb-2 block">Your Email</label>
                   <input
                     type="email"
                     required
@@ -160,38 +151,43 @@ export default function ContactSection() {
                     onChange={(e) => setForm({ ...form, email: e.target.value })}
                   />
                 </div>
-                <div>
-                  <label className="text-white/60 text-sm mb-1.5 block">Message</label>
-                  <textarea
-                    required
-                    rows={4}
-                    placeholder="Your question or message..."
-                    className="w-full bg-white/5 border border-white/10 text-white placeholder-white/25 rounded-xl px-4 py-3 focus:outline-none focus:border-gold-500/50 transition-colors resize-none"
-                    value={form.message}
-                    onChange={(e) => setForm({ ...form, message: e.target.value })}
-                  />
-                </div>
+              </div>
+
+              <div>
+                <label className="text-white/60 text-sm font-medium mb-2 block">Message</label>
+                <textarea
+                  required
+                  rows={5}
+                  placeholder="Your question or message..."
+                  className="w-full bg-white/5 border border-white/10 text-white placeholder-white/25 rounded-xl px-4 py-3 focus:outline-none focus:border-gold-500/50 transition-colors resize-none"
+                  value={form.message}
+                  onChange={(e) => setForm({ ...form, message: e.target.value })}
+                />
+              </div>
+
+              <div className="flex items-center justify-between pt-1">
                 <p className="text-white/25 text-xs">
-                  📧 Your message will be sent to {CONTACT_EMAIL}
+                  📧 Sends to {CONTACT_EMAIL}
                 </p>
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full btn-gold text-navy-950 font-bold py-3.5 rounded-full flex items-center justify-center gap-2"
+                  className="btn-gold text-navy-950 font-bold py-3 px-10 rounded-full flex items-center gap-2 text-sm"
                 >
                   {loading ? (
-                    <div className="w-5 h-5 border-2 border-navy-950/40 border-t-navy-950 rounded-full animate-spin" />
+                    <div className="w-4 h-4 border-2 border-navy-950/40 border-t-navy-950 rounded-full animate-spin" />
                   ) : (
                     <>
-                      <Send size={16} />
+                      <Send size={15} />
                       Send Message
                     </>
                   )}
                 </button>
-              </form>
-            )}
-          </motion.div>
-        </div>
+              </div>
+            </form>
+          )}
+        </motion.div>
+
       </div>
     </section>
   );
