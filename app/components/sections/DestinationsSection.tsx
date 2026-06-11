@@ -85,7 +85,7 @@ export default function DestinationsSection() {
           style={{ height: "260px" }}
         >
           <img
-            src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1400&q=85"
+            src="https://images.unsplash.com/photo-1571406252241-db0280bd36cd?w=1400&q=85"
             alt="Baku night skyline"
             className="w-full h-full object-cover"
           />

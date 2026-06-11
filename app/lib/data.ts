@@ -12,7 +12,7 @@ export const DESTINATIONS = [
     id: 1,
     title: "Flame Towers",
     description: "Three iconic skyscrapers resembling flames that illuminate Baku's skyline at night with a dazzling LED display.",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1571406252241-db0280bd36cd?w=800&q=80",
     tag: "Iconic Landmark",
   },
   {
@@ -98,7 +98,7 @@ export const TESTIMONIALS = [
 ];
 
 export const GALLERY_IMAGES = [
-  { src: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80", alt: "Heydar Aliyev Center", tall: true },
+  { src: "https://images.unsplash.com/photo-1571406252241-db0280bd36cd?w=600&q=80", alt: "Heydar Aliyev Center", tall: true },
   { src: "https://images.unsplash.com/photo-1539635278303-d4002c07eae3?w=600&q=80", alt: "Old City Streets", tall: false },
   { src: "https://images.unsplash.com/photo-1549880181-56a44cf4a9a5?w=600&q=80", alt: "Modern Baku Architecture", tall: false },
   { src: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=600&q=80", alt: "Baku Night Skyline", tall: true },
